@@ -9,8 +9,6 @@ module PROCESADOR_HARVARD(
     output wire [31:0] rc_debug,
     output wire [31:0] op_code_debug
 );
-// PENDIENTES: AGREGAR MODULO DE SUMA Y RESTA FPU
-// AJUSTAR TESTBENCH CON HERRAMIENTAS COMO FUNCIONES, TYPEDEF, STRUCTS, ENUMS, ETC
 
 // Definición de parámetros
 parameter ADDR_WIDTH = 6; 
@@ -25,7 +23,7 @@ reg [31:0] data_memory [0:100];                                         // Memor
 reg [7:0] pc;                                                           // Contador de programa
 reg [31:0] acc;                                                         // Acumulador
 reg [31:0] rx;                                                          // Direccionamiento directo
-reg [31:0] stack_pointer = STACK_INIT;                                  // Stack pointer
+reg [31:0] stack_pointer = STACK_INIT;                          // Stack pointer
 reg [4:0] instruction_register;
 
 
@@ -130,8 +128,8 @@ always @(posedge clk or posedge reset) begin
                 OP_JUMPC: if (acc == 0) pc <= rx;
                 OP_COMP: acc <= (acc > data_memory[rx]) ? 0 : 1;
                 OP_MOVI: acc <= rx;
-                OP_INC: acc <= (acc < 63) ? acc + 1 : 0; // PENDIENTES
-                OP_DEC: acc <= (acc > 0) ? acc - 1 : 63; // PENDIENTES
+                OP_INC: acc <= (acc < 63) ? acc + 1 : 0;
+                OP_DEC: acc <= (acc > 0) ? acc - 1 : 63;
                 OP_SHL: acc <= acc << 1;
                 OP_SHR: acc <= acc >> 1;
                 OP_CALL:begin
@@ -140,9 +138,6 @@ always @(posedge clk or posedge reset) begin
                                 stack_pointer <= stack_pointer + 1;
                                 data_memory[stack_pointer] <= pc + 1;  // Guardamos el pc + 1 para que retorne después
                                 pc <= rx;  // Salta a la subrutina
-                                /* $display("Stack pointer after OP_CALL: %d", stack_pointer);
-                                $display("Stack memory at pointer: %0h", data_memory[stack_pointer]); 
-                                $display("PROGRAM COUNTER: %d", pc); */  //DEBUGING
                             end else begin
                                 // STACKOVERFLOW
                             end 
