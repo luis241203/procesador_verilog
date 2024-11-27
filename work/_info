@@ -11,32 +11,32 @@ cModel Technology
 dC:/Users/Luis Cardenas/OneDrive/Documents/7mo semestre/verficacion_circuitos_digitales/Proyecto_V3
 Xmain_tb_sv_unit
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z1 !s110 1732699303
-VO0VE76d^lCB:[AXX>mQk32
+Z1 !s110 1732701397
+VLeAl=9mPVe@cHbY[n3g^60
 r1
 !s85 0
 !i10b 1
-!s100 Kz3Z^=XSVHf2jVh[S_J6S1
-IO0VE76d^lCB:[AXX>mQk32
+!s100 ?Uj;FflAjJC6TIi@Y`:PX1
+ILeAl=9mPVe@cHbY[n3g^60
 !i103 1
 S1
 Z2 dC:/Users/Luis Cardenas/OneDrive/Documents/7mo semestre/verficacion_circuitos_digitales/procesador_y_tasks
-Z3 w1732699296
+Z3 w1732701392
 Z4 8C:/Users/Luis Cardenas/OneDrive/Documents/7mo semestre/verficacion_circuitos_digitales/procesador_y_tasks/main_tb.sv
 Z5 FC:/Users/Luis Cardenas/OneDrive/Documents/7mo semestre/verficacion_circuitos_digitales/procesador_y_tasks/main_tb.sv
 Frecursos.sv
-!i122 88
+!i122 124
 Z6 L0 1 0
 Z7 OV;L;2020.1;71
 31
-Z8 !s108 1732699302.000000
+Z8 !s108 1732701397.000000
 Z9 !s107 recursos.sv|C:/Users/Luis Cardenas/OneDrive/Documents/7mo semestre/verficacion_circuitos_digitales/procesador_y_tasks/main_tb.sv|
 Z10 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Luis Cardenas/OneDrive/Documents/7mo semestre/verficacion_circuitos_digitales/procesador_y_tasks/main_tb.sv|
 !i113 1
 Z11 o-work work -sv
 Z12 tCvgOpt 0
 vPROCESADOR_HARVARD
-!s110 1732699302
+R1
 !i10b 1
 !s100 ;icaHmP`OL<f91T?oTS;>1
 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -46,7 +46,7 @@ R2
 w1732693298
 8C:/Users/Luis Cardenas/OneDrive/Documents/7mo semestre/verficacion_circuitos_digitales/procesador_y_tasks/main.v
 FC:/Users/Luis Cardenas/OneDrive/Documents/7mo semestre/verficacion_circuitos_digitales/procesador_y_tasks/main.v
-!i122 87
+!i122 123
 L0 1 177
 R7
 r1
@@ -61,22 +61,22 @@ R12
 n@p@r@o@c@e@s@a@d@o@r_@h@a@r@v@a@r@d
 vPROCESADOR_HARVARD_Testbench
 R0
-DXx4 work 15 main_tb_sv_unit 0 22 O0VE76d^lCB:[AXX>mQk32
+DXx4 work 15 main_tb_sv_unit 0 22 LeAl=9mPVe@cHbY[n3g^60
 R1
 R13
 r1
 !s85 0
 !i10b 1
-!s100 _zO;g4ZcV7InSSWb4dYQ`2
-Ilgd<9oHcz8^Yh?IL3zUmS3
+!s100 N:KgG82<Md?D<I4nc?T1=2
+IVVfB:M99CRD5DScN1UIHj1
 !s105 main_tb_sv_unit
 S1
 R2
 R3
 R4
 R5
-!i122 88
-L0 3 463
+!i122 124
+L0 3 475
 R7
 31
 R8
@@ -89,23 +89,23 @@ n@p@r@o@c@e@s@a@d@o@r_@h@a@r@v@a@r@d_@testbench
 Xrecursos_sv_unit
 R0
 R1
-VMRAZXKoA=D2?Rf3W9h9Mm2
+VHKVJzH@Z_8e7:_1F@1[E52
 r1
 !s85 0
 !i10b 1
-!s100 bdS0KUP0Jn0^zjW]cdP?70
-IMRAZXKoA=D2?Rf3W9h9Mm2
+!s100 QSalXo4;Gj]B6AaQ^T9eC2
+IHKVJzH@Z_8e7:_1F@1[E52
 !i103 1
 S1
 R2
-w1732699252
+w1732701108
 8C:/Users/Luis Cardenas/OneDrive/Documents/7mo semestre/verficacion_circuitos_digitales/procesador_y_tasks/recursos.sv
 FC:/Users/Luis Cardenas/OneDrive/Documents/7mo semestre/verficacion_circuitos_digitales/procesador_y_tasks/recursos.sv
-!i122 89
+!i122 125
 R6
 R7
 31
-!s108 1732699303.000000
+R8
 !s107 C:/Users/Luis Cardenas/OneDrive/Documents/7mo semestre/verficacion_circuitos_digitales/procesador_y_tasks/recursos.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Luis Cardenas/OneDrive/Documents/7mo semestre/verficacion_circuitos_digitales/procesador_y_tasks/recursos.sv|
 !i113 1

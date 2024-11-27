@@ -76,8 +76,20 @@ module PROCESADOR_HARVARD_Testbench();
         */
 
         //TASK SUMI
-        //movi_task(proc_inputs, 0,3);
+        //sumi_task(proc_inputs, 0,3);
         
+        //SHIFT TASK
+        //shift_task(proc_inputs, 0,10,10);
+
+        //TASK SUBI
+        //subi_task(proc_inputs, 0,3);
+
+        //NOT TASK
+        //not_task(proc_inputs, 0,3);
+
+        //ANDI TASK
+        andi_task(proc_inputs, 0,1);
+
         /*
         // TESTING DE SUMI
         opcode = OP_MOVI;
@@ -252,7 +264,7 @@ module PROCESADOR_HARVARD_Testbench();
         end
         */
 
-        
+        /*
         // TESTING DE NOT
         opcode = OP_MOVI;
         #3
@@ -264,7 +276,7 @@ module PROCESADOR_HARVARD_Testbench();
             direccion++;
             #3;
         end
-        
+        */
 
         
         /*

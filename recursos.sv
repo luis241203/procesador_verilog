@@ -58,7 +58,7 @@ function automatic void movi_tb(inout processor_Inputs instancia,logic [6:0] dir
     opcode = OP_MOVI;
     instancia.address = direccion;
     instancia.data_in = {opcode, generador_numeros()};
-    $display("numero generado MOVI = %d\n", instancia.data_in[31:0]);
+    $display("numero generado MOVI = %b\n", instancia.data_in[31:0]);
 endfunction
 
 function automatic void sumi_tb(inout processor_Inputs instancia, logic [6:0] direccion, opcode_e opcode);
@@ -99,6 +99,7 @@ function automatic void andi_tb(inout processor_Inputs instancia, logic [6:0] di
     opcode = OP_ANDI;  // Cambié OP_XORI a OP_ANDI
     instancia.address = direccion;
     instancia.data_in = {opcode, generador_numeros()};
+    $display("numero generado ANDI= %b\n", instancia.data_in[31:0]);
 endfunction
 
 function automatic void ori_tb(inout processor_Inputs instancia, logic [6:0] direccion, opcode_e opcode);
@@ -209,3 +210,76 @@ function automatic void not_tb(inout processor_Inputs instancia, logic [6:0] dir
     instancia.address = direccion;
     instancia.data_in = {opcode, generador_numeros()};
 endfunction
+
+task automatic sumi_task(ref processor_Inputs instancia, input logic [6:0] start, input int stop);
+    opcode_e opcode;
+    int i;
+    opcode = OP_MOVI;
+    instancia.address = start;
+    instancia.data_in = {opcode , generador_numeros()};
+    #3
+    for (i = (start + 1); i < stop; i++) begin
+        sumi_tb(instancia,i,opcode);
+        #3;
+    end
+endtask //automatic
+
+task automatic shift_task(ref processor_Inputs instancia, input logic [6:0] start, input int left,input int right);
+    opcode_e opcode;
+    int i;
+    opcode = OP_MOVI;
+    instancia.address = 0;
+    instancia.data_in = {opcode , 32'b1};
+    #3
+    for (i = (start + 1); i < left; i++) begin
+        shl_tb(instancia,i,opcode);
+        #3;
+    end
+    for (i = left; i < (left + right); i++) begin
+        shr_tb(instancia,i,opcode);
+        #3;
+    end
+endtask //automatic
+
+task automatic subi_task(ref processor_Inputs instancia, input logic [6:0] start, input int stop);
+    opcode_e opcode;
+    int i;
+    opcode = OP_MOVI;
+    instancia.address = start;
+    instancia.data_in = {opcode , generador_numeros()};
+    #3
+    for (i = (start + 1); i < stop; i++) begin
+        subi_tb(instancia,i,opcode);
+        #3;
+    end
+endtask //automatic
+
+task automatic not_task(ref processor_Inputs instancia, input logic [6:0] start, input int stop);
+    opcode_e opcode;
+    int i, i_2;
+    opcode = OP_MOVI;
+    #3
+    for (i = start; i < (stop * (2) -1); i++) begin
+        movi_tb(instancia,i,opcode);
+        i_2 = i + 1;
+        #3;
+        not_tb(instancia, i_2, opcode);
+        i++;
+        #3;
+    end
+endtask //automatic
+
+task automatic andi_task(ref processor_Inputs instancia, input logic [6:0] start, input int stop);
+    opcode_e opcode;
+    int i, i_2;
+    opcode = OP_MOVI;
+    #3
+    for (i = start; i < (stop * (2) -1); i++) begin
+        movi_tb(instancia,i,opcode);
+        i_2 = i + 1;
+        #3;
+        andi_tb(instancia, i_2, opcode);
+        i++;
+        #3;
+    end
+endtask //automatic
